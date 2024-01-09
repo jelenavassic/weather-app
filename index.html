@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="mycss.css" rel="stylesheet" />
+    <script type="module" src="script.js" defer></script>
+    <title>Current Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1 class="page-title">Current Weather</h1>
+
+        <form class="locationform">
+          <div class="locationform__elements">
+            <label for="location">Enter location:</label>
+            <input
+              id="location"
+              type="text"
+              name="text"
+              placeholder=" City, country code"
+            />
+            <input type="submit" value="Search" id="search" />
+          </div>
+          <p class="error hidden"></p>
+          <!-- <p class="instructions">
+            For USA, enter "[city],[state],US" where [state] is the two-letter
+            abbreviation. For every other country, enter "[city],[country]" where
+            [country] is the two-letter abbreviation.
+          </p> -->
+        </form>
+      </div>
+      
+
+      <section class="main-content">
+        <!-- ovde ubaciti sliku na main-content backround-->
+        <div class="weathercard">
+           <!-- <span class="loader hidden"> </span> -->
+          <!-- <div class="info">
+            <div class="weathercard__meta">
+              <div class="weathercard__meta-location">--</div>
+            </div>
+
+            <div class="weathercard__temp">
+              <span class="temp">--</span><span class="tempunit">°C</span>
+            </div>
+          </div>
+          <div class="weathercard__meta">
+            <div class="weathercard__meta-location">--</div>
+          </div>
+
+          <div class="weathercard__temp">
+            <span class="temp">--</span><span class="tempunit">°C</span>
+          </div>
+
+          <div class="weathercard__desc">
+            <span class="desc">--</span>
+          </div>
+
+          <div class="grid">
+            <article>
+              <div class="card weathercard__feels__like">
+                <span>FEELS LIKE</span>
+                <span class="temp">--</span><span class="tempunit">°C</span>
+              </div>
+            </article>
+            <article>
+              <div class="card weathercard__min__max">
+                <div>
+                  <span>MIN. TEMPERATURE</span>
+                  <span class="temp">--</span>
+                </div>
+
+                <div>
+                  <span>MAX. TEMPERATURE</span>
+                  <span class="temp">--</span>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div class="card weathercard__humidity">
+                <span>HUMIDITY</span>
+                <span class="speed">--</span
+                ><span class="weathercard__humidity">%</span>
+              </div>
+            </article>
+
+            <article>
+              <span>WIND</span>
+              <div class="card weathercard__wind">
+                <div class="weathercard__wind-speed">
+                  <span>WIND</span>
+
+                  <span class="speed">--</span
+                  ><span class="card windunit">m/s</span>
+                </div>
+              </div>
+            </article>
+            <button id="units">Change units</button> -->
+
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

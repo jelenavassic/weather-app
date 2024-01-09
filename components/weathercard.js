@@ -70,7 +70,7 @@ const weatherCard = (data, units) => {
         </div>
         
         <div class="weathercard__desc">
-        <span class="desc">${data.weather[0].main}</span> 
+        <span class="desc">${data.weather[0].description}</span> 
       </div>
         </div>
 

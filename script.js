@@ -65,7 +65,7 @@ async function displayData(location, units) {
       .then(function (data) {
         console.log(data);
         mainContent.innerHTML = weatherCard(data, units);
-        container.style.background = `url('../img/${data.weather[0].main}.jpg')`;
+        container.style.background = `url('./img/${data.weather[0].main}.jpg')`;
         container.style.opacity = "0.8";
         mainContent.style.backgroundSize = "cover"; 
       })

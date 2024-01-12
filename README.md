@@ -8,6 +8,7 @@ This simple web application allows users to check the current weather for a spec
 ## Features
 
 -Search Functionality: Easily find the current weather by entering a city or city with a country code in the search bar and clicking the "Search" button.
+
 -Unit Change: Toggle between Celsius and Fahrenheit units with a simple click on the "Change units" button.
 
 ## Built With

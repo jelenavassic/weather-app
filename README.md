@@ -1,5 +1,5 @@
 # Weather app
-[Access the MyBudget App Online](https://jelenavassic.github.io/weather-app/)
+[Access the Weather App Online](https://jelenavassic.github.io/weather-app/)
 
 
 This simple web application allows users to check the current weather for a specific location. Users can enter a city or city with a country code to get real-time weather information such as the temperature, humidity, and wind speed.

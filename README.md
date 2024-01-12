@@ -21,5 +21,7 @@ This simple web application allows users to check the current weather for a spec
 ## Installation
 Clone the repository to your local machine:
 git clone https://github.com/your-username/weather-app.git
+
 Open the project folder in your preferred text editor.
+
 Launch the app by opening the index.html file in your web browser.

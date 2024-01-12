@@ -147,8 +147,6 @@ const weatherCard = (data, units) => {
           </div>       
 
         </article>
-        <button id="units">Change units</button>
-
         </div>
       </div>
     `;

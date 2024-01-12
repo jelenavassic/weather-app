@@ -1,9 +1,4 @@
-/**
- * Build a location selector.
- * - Capture the location field input.
- * - Send a fetch query to the OpenWeather geocoding API (https://openweathermap.org/api/geocoding-api)
- * - Use the lat and lon data from the geocoding response to fetch weather data.
- */
+
 
 import settings from "./settings.js";
 import weatherCard from "./components/weathercard.js";

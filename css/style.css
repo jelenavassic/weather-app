@@ -26,8 +26,7 @@
 form{
   width: 30vw;
   margin: 5%;
-  /* border: 2px solid grey; */
-  padding: 3%;
+   padding: 3%;
   border-radius: 5px;
  
  }
@@ -35,8 +34,7 @@ form{
 display: flex;
 gap:3%;
 width: 100%;
-/* margin-top: 5%; */
-display: flex;
+ display: flex;
 align-items: center;
 justify-content: center;
 }
@@ -68,14 +66,12 @@ label{
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* gap: 10%; */
-}
+ }
 .weathercard,
 .info {
   display: flex;
   flex-direction: row;
-  /* align-items: center; */
-  justify-content: center;
+   justify-content: center;
   gap: 10%;
 }
 
@@ -97,11 +93,12 @@ label{
 #units {
   padding:  3%;
   border-radius: 5px;
-  background-color: gray;
-  color: beige;
+  background-color:  gray;
+  color:#ffc815;
   font-size: 0.9rem;
   border: none;
   margin-left: 5%;
+  font-weight: bold;
 }
 
 article {
@@ -146,8 +143,7 @@ article {
   padding: 0;
   position: absolute;
   width: 1px;
-  /* word-wrap: normal !important; */
-}
+ }
 .weathercard__desc{
   font-size: 1.6rem;
 }
@@ -156,8 +152,7 @@ article {
   justify-content: center;
   align-items: center;
   margin-top: 20%;
-  /* padding-block-end: 2rem; */
-}
+ }
 
 .weathercard__wind::before {
   grid-column: 1;

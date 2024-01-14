@@ -3,6 +3,10 @@
   margin: 0;
   padding: 0;
 }
+body{
+  font-family: 'Nunito', sans-serif;
+}
+
 
 .error {
   color: hsl(0, 100%, 23%);
@@ -19,7 +23,7 @@
   flex-direction: column;
   align-items: center;
   color: #ffc815;
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-top: 3%;
 
  }

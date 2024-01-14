@@ -63,6 +63,10 @@ async function displayData(location, units) {
         container.style.background = `url('./img/${data.weather[0].main}.jpg')`;
         container.style.opacity = "0.8";
         mainContent.style.backgroundSize = "cover"; 
+        mainContent.style.backgroundRepeat = "no-repeat"; 
+        mainContent.style.backgroundPosition = "center"; 
+
+
       })
       .then(function () {
         unitChanger();

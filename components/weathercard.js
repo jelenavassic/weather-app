@@ -64,7 +64,7 @@ const weatherCard = (data, units) => {
           )}</span><span class="tempunit">${
     tempTranslator(data.main.temp, units).unit
   }</span>
-  <span class="temp-icon"><img src=".//img/${data.weather[0].main}.png" alt="">
+  <span class="temp-icon"><img src="img/${data.weather[0].main}.png" alt="">
   </span>
         </div>
         <div class="weathercard__meta-location"> </div>${data.name}, ${

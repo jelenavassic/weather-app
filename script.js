@@ -75,9 +75,9 @@ function displayData(lat, lon, units) {
       mainContent.innerHTML = weatherCard(data, units);
       container.style.background = `url('./img/${data.weather[0].main}.jpg')`;
       container.style.opacity = "0.8";
-      mainContent.style.backgroundSize = "cover";
-      mainContent.style.backgroundRepeat = "no-repeat";
-      mainContent.style.backgroundPosition = "center";
+      container.style.backgroundSize = "cover";
+      container.style.backgroundRepeat = "no-repeat";
+      container.style.backgroundPosition = "center";
     })
     .then(unitChanger)
     .catch((error) => {

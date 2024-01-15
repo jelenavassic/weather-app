@@ -7,7 +7,15 @@
 @media only screen and (max-width: 600px) {
   .weathercard {
     flex-direction: column;
+    width: 90vw;
+
   }
+
+  /* #location{
+    height: 2rem;
+    width: 20rem;
+    padding: 20%;
+   } */
   .info {
     margin-bottom: 5%;
     font-size: 3rem;

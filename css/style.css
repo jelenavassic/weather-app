@@ -96,15 +96,16 @@ label{
   justify-content: center;
   gap:2rem;
   font-size: 4rem;
-  background-color: rgb(32, 30, 30);
-   opacity: 60%;
-   color: wheat;
-  border: 2px solid grey;
+  background-color: rgb(32, 30, 30, 0.6);
+   /* opacity: 60%; */
+   color: white;
+   border: 2px solid grey;
   padding: 3%;
   border-radius: 5%;
   max-width: 50vw;
 
 }
+
 .weathercard__temp{
   display: flex;
 justify-content: center;
@@ -137,10 +138,10 @@ article {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: rgb(32, 30, 30);
+  background-color: rgb(32, 30, 30, 0.8);
   box-shadow: 0 0 5px  gray;
-  opacity: 80%;
-  color: wheat;
+  /* opacity: 80%; */
+  color: white;
   font-weight: bold;
 }
 .card {

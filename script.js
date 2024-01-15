@@ -3,17 +3,11 @@ import weatherCard from "./components/weathercard.js";
 
 const mainContent = document.querySelector(".main-content");
 const locationForm = document.querySelector(".locationform");
-let units = settings.units;
 const errorMsg = document.querySelector(".error");
 const container = document.querySelector(".container");
+let units = settings.units;
+let cords = getCord();
 
-// Caputre location form submit
-locationForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  errorMsg.classList.add("hidden");
-  const cords = getCord();
-  displayData(cords[0], cords[1], units);
-});
 
 $(function () {
   $(".js-data-example-ajax").select2({
@@ -35,13 +29,11 @@ $(function () {
         data.geonames.slice(0, 50).forEach((element) => {
           var cordinates = element.lat + "," + element.lng,
             name = element.name + ", " + element.countryName;
-
           cityList.push({
             id: cordinates,
             text: name,
           });
         });
-        // console.log(cityList);
         return {
           results: cityList,
         };
@@ -50,17 +42,32 @@ $(function () {
   });
 });
 
+// Caputre location form submit
+locationForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  errorMsg.classList.add("hidden");
+  // let cords = getCord();
+  displayData(cords[0], cords[1], units);
+});
+
+
+
 const unitChanger = () => {
   const unitsButton = document.querySelector("#units");
   unitsButton.addEventListener("click", () => {
     units === "metric" ? (units = "imperial") : (units = "metric");
-    displayData(settings.lat, settings.lon, units);
+    // let cords = getCord();
+    displayData(cords[0], cords[1], units);
   });
 };
 
 function getCord() {
   var result = $(".js-data-example-ajax").find(":selected").val();
-  return result.split(",");
+  if (result !== undefined) {
+    return result.split(",");
+  } else {
+    return [settings.lat, settings.lon];
+  }
 }
 
 function displayData(lat, lon, units) {

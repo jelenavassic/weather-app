@@ -57,18 +57,20 @@ const weatherCard = (data, units) => {
         <div class="info">
 
         <div class="weathercard__meta">
-          <div class="weathercard__meta-location"> </div>${data.name}, ${
-    data.sys.country
-  }
-        </div>
+          
         <div class="weathercard__temp">
-          <span class="temp"> ${Math.round(
+          <span class="temp-info"> ${Math.round(
             tempTranslator(data.main.temp, units).value
           )}</span><span class="tempunit">${
     tempTranslator(data.main.temp, units).unit
   }</span>
+  <span class="temp-icon"><img src=".//img/${data.weather[0].main}.png" alt="">
+  </span>
         </div>
-        
+        <div class="weathercard__meta-location"> </div>${data.name}, ${
+          data.sys.country
+        }
+              </div>
         <div class="weathercard__desc">
         <span class="desc">${data.weather[0].description}</span> 
       </div>

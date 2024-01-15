@@ -25,7 +25,7 @@ $(function () {
     minimumInputLength: 3,
     ajax: {
       delay: 250,
-      url: "http://api.geonames.org/searchJSON",
+      url: " https://secure.geonames.org/searchJSON",
       dataType: "json",
       // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
       data: function (params) {

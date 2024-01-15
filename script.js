@@ -6,7 +6,6 @@ const locationForm = document.querySelector(".locationform");
 const errorMsg = document.querySelector(".error");
 const container = document.querySelector(".container");
 let units = settings.units;
-let cords = getCord();
 
 
 $(function () {
@@ -46,17 +45,17 @@ $(function () {
 locationForm.addEventListener("submit", (event) => {
   event.preventDefault();
   errorMsg.classList.add("hidden");
-  // let cords = getCord();
+  let cords = getCord();
   displayData(cords[0], cords[1], units);
 });
 
 
-
+// Change units
 const unitChanger = () => {
   const unitsButton = document.querySelector("#units");
   unitsButton.addEventListener("click", () => {
     units === "metric" ? (units = "imperial") : (units = "metric");
-    // let cords = getCord();
+    let cords = getCord();
     displayData(cords[0], cords[1], units);
   });
 };

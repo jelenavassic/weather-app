@@ -3,18 +3,14 @@ import weatherCard from "./components/weathercard.js";
 
 const mainContent = document.querySelector(".main-content");
 const locationForm = document.querySelector(".locationform");
-
 let units = settings.units;
 const errorMsg = document.querySelector(".error");
-
 const container = document.querySelector(".container");
 
 // Caputre location form submit
 locationForm.addEventListener("submit", (event) => {
   event.preventDefault();
   errorMsg.classList.add("hidden");
-  // console.log(formInput.value);
-  // location = formInput.value;
   const cords = getCord();
   displayData(cords[0], cords[1], units);
 });
@@ -27,19 +23,15 @@ $(function () {
       delay: 250,
       url: " https://secure.geonames.org/searchJSON",
       dataType: "json",
-      // Additional AJAX parameters go here; see the end of this chapter for the full code of this example
       data: function (params) {
         var query = {
           q: params.term,
           username: "dajmigrad",
         };
-
-        // Query parameters will be ?search=[term]&type=public
         return query;
       },
       processResults: function (data) {
         var cityList = [];
-
         data.geonames.slice(0, 50).forEach((element) => {
           var cordinates = element.lat + "," + element.lng,
             name = element.name + ", " + element.countryName;
@@ -49,8 +41,7 @@ $(function () {
             text: name,
           });
         });
-        console.log(cityList);
-        // Transforms the top-level key of the response object from 'items' to 'results'
+        // console.log(cityList);
         return {
           results: cityList,
         };
@@ -69,7 +60,6 @@ const unitChanger = () => {
 
 function getCord() {
   var result = $(".js-data-example-ajax").find(":selected").val();
-
   return result.split(",");
 }
 

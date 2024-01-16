@@ -58,6 +58,9 @@
     /* gap:1.5rem; */
     /* font-size: 3rem; */
   }
+  .temp-info{
+    font-size: 7rem;
+  }
   article {
     font-weight: normal;
     padding: 8%;

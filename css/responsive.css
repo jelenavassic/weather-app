@@ -1,24 +1,62 @@
-@media only screen and (max-width: 992px) {
+/* @media only screen and (max-width: 992px) {
   label {
     font-size: 1.1rem;
   }
-}
+} */
 
 @media only screen and (max-width: 600px) {
-  .weathercard {
-    flex-direction: column;
-    width: 90vw;
+  .header {
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    /* background-color: aqua; */
+  }
+  label {
+    font-size: 1.1rem;
+  }
+  .locationform__elements {
+     
+    margin-top: 3%;
+    align-items: flex-start;
+    /* kad se smanji input promeniti na center */
 
+   }
+  .flex-row {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 3% 0;
   }
 
-  /* #location{
-    height: 2rem;
-    width: 20rem;
-    padding: 20%;
-   } */
+
+   /* ne reaguje na promenu velicine, ostaje 40 rem */
+  #location {
+    width: 10rem;
+  }
+  #select2-location-container {
+    width: 50%;
+    background-color: white;
+    align-self: center;
+  }
+
+  #search {
+    padding: 2%;
+    margin: 1.2rem 0;
+  }
+
+  .weathercard {
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin: 3%;
+  }
+
   .info {
     margin-bottom: 5%;
-    font-size: 3rem;
+    font-size: 2rem;
+    padding: 0 auto;
+    width: 100%;
+    /* gap:1.5rem; */
+    /* font-size: 3rem; */
   }
   article {
     font-weight: normal;
@@ -27,8 +65,5 @@
 
   .header {
     font-size: 1.3rem;
-  }
-  #search {
-    padding: 9%;
   }
 }

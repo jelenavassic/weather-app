@@ -9,10 +9,11 @@
     width: 90%;
     align-items: center;
     justify-content: center;
-    /* background-color: aqua; */
+    background-color: aqua;
   }
   label {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
+     width: 50%;
   }
   .locationform__elements {
      
@@ -39,8 +40,8 @@
   }
 
   #search {
-    padding: 2%;
-    margin: 1.2rem 0;
+    padding: 3%;
+    margin: 1.3rem 0;
   }
 
   .weathercard {

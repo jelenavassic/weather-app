@@ -77,10 +77,11 @@ font-style: oblique;
  }
 #search{
   border-radius: 5px;
-  padding: 2%;
+  padding: 1.5%;
   background-color: #ffc815;
-  color: beige;
-  border: none;
+  color: white;
+   border: none;
+  font-size: 1.2rem;
 }
 .main-content {
   width: 100%;
@@ -134,11 +135,12 @@ font-weight: bold;
   margin-left: 2rem;
 }
 #units {
-  padding:  3%;
+  cursor: pointer;
+  padding:  2%;
   border-radius: 5px;
   background-color:  gray;
   color:#ffc815;
-  font-size: 0.9rem;
+  font-size: 1rem;
   border: none;
   margin-left: 5%;
   font-weight: bold;

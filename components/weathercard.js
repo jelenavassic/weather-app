@@ -64,12 +64,14 @@ const weatherCard = (data, units) => {
           )}</span><span class="tempunit">${
     tempTranslator(data.main.temp, units).unit
   }</span>
-  <span class="temp-icon"><img src="./img/icon_${data.weather[0].main}.png" alt="">
+  <span class="temp-icon"><img src="./img/icon_${
+    data.weather[0].main
+  }.png" alt="">
   </span>
         </div>
         <div class="weathercard__meta-location"> </div>${data.name}, ${
-          data.sys.country
-        }
+    data.sys.country
+  }
               </div>
         <div class="weathercard__desc">
         <span class="desc">${data.weather[0].description}</span> 
@@ -77,46 +79,29 @@ const weatherCard = (data, units) => {
       <button id="units">°C °F</button>
 
         </div>
-
-
-
         <div class="grid">
-
-
-
         <article>
           <div class="card weathercard__feels__like">
           <div>FEELS LIKE</div>
           <span class="temp"> ${Math.round(
             tempTranslator(data.main.feels_like, units).value
-          )} ${
-            tempTranslator(data.main.feels_like, units).unit
-          }</span>
+          )} ${tempTranslator(data.main.feels_like, units).unit}</span>
           
           </div>
         </article>
-
-
         <article>
           <div class="card weathercard__min__max">
           <div>
-
           <span>MIN. TEMPERATURE</span>
           <span class="temp card"> ${Math.round(
             tempTranslator(data.main.temp_min, units).value
-          )}${
-            tempTranslator(data.main.temp_min, units).unit
-          }</span><br>
-
+          )}${tempTranslator(data.main.temp_min, units).unit}</span><br>
             </div>
             <div>
-
           <span>MAX. TEMPERATURE</span>
           <span class="temp card"> ${Math.round(
             tempTranslator(data.main.temp_max, units).value
-          )}${
-            tempTranslator(data.main.temp_max, units).unit
-          }</span>    
+          )}${tempTranslator(data.main.temp_max, units).unit}</span>    
             </div>
       </div>
         </article>
@@ -130,12 +115,9 @@ const weatherCard = (data, units) => {
         </article>
 
         <article>
-
           <div class="weathercard__wind">
-
             <div class="weathercard__wind-speed">
             <span>WIND</span>
-
               <span class="speed">${speedTranslator(
                 data.wind.speed,
                 units

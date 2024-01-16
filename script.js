@@ -7,7 +7,6 @@ const errorMsg = document.querySelector(".error");
 const container = document.querySelector(".container");
 let units = settings.units;
 
-
 $(function () {
   $(".js-data-example-ajax").select2({
     placeholder: "City, country code",
@@ -49,7 +48,6 @@ locationForm.addEventListener("submit", (event) => {
   displayData(cords[0], cords[1], units);
 });
 
-
 // Change units
 const unitChanger = () => {
   const unitsButton = document.querySelector("#units");
@@ -57,8 +55,16 @@ const unitChanger = () => {
     units === "metric" ? (units = "imperial") : (units = "metric");
     let cords = getCord();
     displayData(cords[0], cords[1], units);
+    updateButtonLabel();
   });
+  updateButtonLabel();
 };
+
+const updateButtonLabel = () => {
+  const unitsButton = document.querySelector("#units");
+  unitsButton.innerHTML = units === "metric" ? "°F" : "°C";
+};
+
 
 function getCord() {
   var result = $(".js-data-example-ajax").find(":selected").val();

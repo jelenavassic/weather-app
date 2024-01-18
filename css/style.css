@@ -98,7 +98,11 @@ font-style: oblique;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
  }
+ 
 .weathercard,
 .info {
   display: flex;
@@ -155,7 +159,7 @@ article {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   background-color: rgb(32, 30, 30, 0.7);
   /* box-shadow: 0 0 5px  gray; */
   /* opacity: 80%; */
@@ -168,8 +172,8 @@ article {
   justify-content: center;
   align-items: center;
 }
-
-.grid {
+ 
+ .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;

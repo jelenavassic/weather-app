@@ -19,6 +19,8 @@
   crossorigin="anonymous"></script>
   <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/momentjs/latest/moment-timezone-with-data.min.js"></script> -->
     <script type="module" src="script.js" defer></script>
  
     <title>Current Weather</title>
@@ -27,24 +29,18 @@
     <div class="container">
       <div class="header">
         <h1 class="page-title">Current Weather</h1>
-
         <form class="locationform">
           <div class="locationform__elements">
             <label for="location">Enter location:</label>
        <div class="flex-row">
         <select id="location" class="js-data-example-ajax"></select>
-
         <input type="submit" value="Search" id="search" />
        </div>
-       
-
           </div>
           <p class="error hidden"></p>
         </form>
       </div>
-
-
-      <section class="main-content">
+       <section class="main-content">
          <div class="weathercard">
            <!-- <span class="loader hidden"> </span> -->
           <!-- <div class="info">

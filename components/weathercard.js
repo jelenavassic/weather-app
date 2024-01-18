@@ -13,7 +13,7 @@ const tempTranslator = (temp, unit) => {
       unit: "°F",
     },
   };
-  console.log(allTemps);
+  // console.log(allTemps);
   if (unit === "metric") {
     return allTemps.c;
   } else if (unit === "imperial") {
@@ -44,13 +44,7 @@ const speedTranslator = (speed, units) => {
 };
 
 const weatherCard = (data, units) => {
-  return `
-  
-
-
-
-
-
+   return `
         <div class="weathercard">
         <!-- <link href="loader.css" rel="stylesheet" /> -->
         <!-- <span class="loader hidden"> </span> -->
@@ -64,9 +58,7 @@ const weatherCard = (data, units) => {
           )}</span><span class="tempunit">${
     tempTranslator(data.main.temp, units).unit
   }</span>
-  <span class="temp-icon"><img src="./img/icon_${
-    data.weather[0].main
-  }.png" alt="">
+  <span class="temp-icon">
   </span>
         </div>
         <div class="weathercard__meta-location"> </div>${data.name}, ${
@@ -88,33 +80,6 @@ const weatherCard = (data, units) => {
           )} ${tempTranslator(data.main.feels_like, units).unit}</span>
           
           </div>
-        </article>
-        <article>
-          <div class="card weathercard__min__max">
-          <div>
-          <span>MIN. TEMPERATURE</span>
-          <span class="temp card"> ${Math.round(
-            tempTranslator(data.main.temp_min, units).value
-          )}${tempTranslator(data.main.temp_min, units).unit}</span><br>
-            </div>
-            <div>
-          <span>MAX. TEMPERATURE</span>
-          <span class="temp card"> ${Math.round(
-            tempTranslator(data.main.temp_max, units).value
-          )}${tempTranslator(data.main.temp_max, units).unit}</span>    
-            </div>
-      </div>
-        </article>
-<article>
-          <div class="card weathercard__humidity">
-          <div>HUMIDITY</div>
-            <span class="weathercard__humidity">${Math.round(
-              tempTranslator(data.main.humidity).value
-            )}%</span>
-          </div>
-        </article>
-
-        <article>
           <div class="weathercard__wind">
             <div class="weathercard__wind-speed">
             <span>WIND</span>
@@ -131,12 +96,48 @@ const weatherCard = (data, units) => {
                 <span class="screen-reader-text">${data.wind.deg}</span>
             </div>
           </div>       
-
         </article>
 
+        <article>
+          <div class="card weathercard__min__max">
+          <div>
+          <span>MIN. TEMPERATURE</span>
+          <span class="temp card"> ${Math.round(
+            tempTranslator(data.main.temp_min, units).value
+          )}${tempTranslator(data.main.temp_min, units).unit}</span><br>
+            </div>
+            <div>
+          <span>MAX. TEMPERATURE</span>
+          <span class="temp card"> ${Math.round(
+            tempTranslator(data.main.temp_max, units).value
+          )}${tempTranslator(data.main.temp_max, units).unit}</span>    
+            </div>
+      </div>
+        </article>
+
+        <article>
+        <div class="card-sunset">
+        </div>
+        </article>
+
+<article>
+          <div class="card weathercard__humidity">
+          <div>HUMIDITY</div>
+            <span class="weathercard__humidity">${Math.round(
+              tempTranslator(data.main.humidity).value
+            )}%</span>
+          </div>
+          <div class="card weathercard__pressure">
+          <div>PRESSURE</div>
+            <span class="weathercard__pressure">${Math.round(
+              tempTranslator(data.main.pressure).value
+            )}mb</span>
+          </div>
+        </article>
         </div>
       </div>
     `;
 };
-
+ 
 export default weatherCard;
+ 

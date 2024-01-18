@@ -180,15 +180,15 @@ async function displayData(lat, lon, units) {
     // Menja pozadinu samo u slucaju da je Clear, za ostale vremenske uslove odgovaraju dnevne slike
     if (data.weather[0].main == "Clear" && !isDaytime) {
       container.style.background = `url('./img/night-Clear.jpg')`;
-      // cardIcon.innerHTML = `<img src="./img/night-${desc}.png" alt="">`;
-    } else {
+     } else {
       container.style.background = `url('./img/${desc}.jpg')`;
       cardIcon.innerHTML = `<img src="./img/icon_${desc}.png" alt="">`;
     }
-    // Menja ikonice samo ako je oblacno ili magla nocu
+    // Menja ikonice  nocu
     if (data.weather[0].main == desc && !isDaytime) {
       cardIcon.innerHTML = `<img src="./img/night-${desc}.png" alt="">`;
     }
+    
     container.style.opacity = "0.8";
     container.style.backgroundSize = "cover";
     container.style.backgroundRepeat = "no-repeat";

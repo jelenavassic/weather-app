@@ -116,8 +116,8 @@ async function getSunset(lat, lon) {
 
     const utcMomentRise = moment.utc(sunrise24, "HH:mm:ss");
     const localMomentRise = utcMomentRise.utcOffset(UTC);
-     const realSunrise = localMomentRise.format("HH:mm:ss");
- 
+    const realSunrise = localMomentRise.format("HH:mm:ss");
+
     const utcMomentSet = moment.utc(sunset24, "HH:mm:ss");
     const localMomentSet = utcMomentSet.utcOffset(UTC);
     const realSunset = localMomentSet.format("HH:mm:ss");
@@ -152,6 +152,8 @@ async function displayData(lat, lon, units) {
     const time = await getTime(lat, lon);
     const currentTime = time.time_24;
     // console.log(currentTime);
+     console.log(data);
+
     const sunsetData = await getSunset(lat, lon);
     const sunsetTime = sunsetData.sunset;
     const sunriseTime = sunsetData.sunrise;
@@ -167,7 +169,7 @@ async function displayData(lat, lon, units) {
     const cardSunset = document.querySelector(".card-sunset");
     const cardIcon = document.querySelector(".temp-icon");
     const desc = data.weather[0].main;
-    
+
     cardSunset.innerHTML = `<div>
            <span><img src="./img/sunrise.png" alt=""></span>
           <span class="temp card"> ${sunriseTime} </span><br>
@@ -180,7 +182,7 @@ async function displayData(lat, lon, units) {
     // Menja pozadinu samo u slucaju da je Clear, za ostale vremenske uslove odgovaraju dnevne slike
     if (data.weather[0].main == "Clear" && !isDaytime) {
       container.style.background = `url('./img/night-Clear.jpg')`;
-     } else {
+    } else {
       container.style.background = `url('./img/${desc}.jpg')`;
       cardIcon.innerHTML = `<img src="./img/icon_${desc}.png" alt="">`;
     }
@@ -188,7 +190,7 @@ async function displayData(lat, lon, units) {
     if (data.weather[0].main == desc && !isDaytime) {
       cardIcon.innerHTML = `<img src="./img/night-${desc}.png" alt="">`;
     }
-    
+
     container.style.opacity = "0.8";
     container.style.backgroundSize = "cover";
     container.style.backgroundRepeat = "no-repeat";

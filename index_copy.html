@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="./css/style.css" rel="stylesheet"/>
+    <link href="./css/responsive.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon.png"/>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+            crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/momentjs/latest/moment-timezone-with-data.min.js"></script> -->
+    <script type="module" src="./script_copy.js" defer></script>
+
+    <title>Current Weather</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 class="page-title">Current Weather</h1>
+        <form class="locationform">
+            <div class="locationform__elements">
+                <label for="location">Enter location:</label>
+                <div class="flex-row">
+                    <select id="location" class="js-data-example-ajax"></select>
+                    <input type="submit" value="Search" id="search"/>
+                </div>
+            </div>
+            <p class="error hidden"></p>
+        </form>
+    </div>
+    <section class="main-content">
+        <!--div gde ce se izrenderovani templejt smestiti-->
+        <div class="weathercard"></div>
+
+        <!-- template script -->
+        <!--definisanje templejta u html-u jer ga je lakse odrzavati i prosirivati-->
+        <!--sve ono sto se nalazi u script tagu predstavlja jedan templejt-->
+        <!--ukoliko je potrebno vise templejta, slobodno mogu da se definise jos ovakvih script tagova-->
+        <!--ovakav skript tag browser po default-u nece stampati-->
+        <script type="text/template" data-template="weatherTemplate">
+            <div class="info">
+                <div class="weathercard__meta">
+                    <div class="weathercard__temp">
+                        <span class="temp-info">${temp.value}</span>
+                        <span class="tempunit">${temp.unit}</span>
+                        <span class="temp-icon"></span>
+                    </div>
+                    <div class="weathercard__meta-location">
+                        ${name}, ${country}
+                    </div>
+                </div>
+                <div class="weathercard__desc">
+                    <span class="desc">${description}</span>
+                </div>
+                <button id="units">°C °F</button>
+            </div>
+            <div class="grid">
+                <article>
+                    <div class="card weathercard__feels__like">
+                        <div>FEELS LIKE</div>
+                        <span class="temp">
+                            ${feels_like} ${temp_unit}
+                        </span>
+                    </div>
+                    <div class="weathercard__wind">
+                        <div class="weathercard__wind-speed">
+                            <span>WIND</span>
+                            <span class="speed">${wind_speed.value}</span>
+                            <span class="windunit">${wind_speed.unit}</span>
+                        </div>
+                        <div class="weathercard__wind-dir" style="transform:rotate(${
+data.wind.deg + 90
+}deg)">
+                            <span class="screen-reader-text">${wind_deg}</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="card weathercard__min__max">
+                        <div>
+                            <span>MIN. TEMPERATURE</span>
+                            <span class="temp card"> ${temp_min}${temp_unit}</span>
+                            <br>
+                        </div>
+                        <div>
+                            <span>MAX. TEMPERATURE</span>
+                            <span class="temp card"> ${temp_max}${temp_unit}</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article>
+                    <div class="card-sunset"></div>
+                </article>
+
+                <article>
+                    <div class="card weathercard__humidity">
+                        <div>HUMIDITY</div>
+                        <span class="weathercard__humidity">${humidity}%</span>
+                    </div>
+                    <div class="card weathercard__pressure">
+                        <div>PRESSURE</div>
+                        <span class="weathercard__pressure">${pressure}mb</span>
+                    </div>
+                </article>
+            </div>
+        </script>
+    </section>
+</div>
+</body>
+</html>

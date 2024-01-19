@@ -116,8 +116,8 @@ async function getSunset(lat, lon) {
 
     const utcMomentRise = moment.utc(sunrise24, "HH:mm:ss");
     const localMomentRise = utcMomentRise.utcOffset(UTC);
-    const realSunrise = localMomentRise.format("HH:mm:ss");
-
+     const realSunrise = localMomentRise.format("HH:mm:ss");
+ 
     const utcMomentSet = moment.utc(sunset24, "HH:mm:ss");
     const localMomentSet = utcMomentSet.utcOffset(UTC);
     const realSunset = localMomentSet.format("HH:mm:ss");
